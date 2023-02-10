@@ -1,0 +1,278 @@
+/*Selector universal*/
+*{
+    text-decoration: none;
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+
+/********caja principal ****/
+.container{
+
+    width: 90%;
+    height: auto;
+    margin: 0px auto;
+    border:  1px solid rgba(225, 225, 226, 0.8);
+    box-shadow: 0px 0px 10px #ccc;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    min-height: 600px;
+}
+
+/*header de nuestra pagina*/
+.cabecera{
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;/*lo cnetra verticalmente*/
+    height: 120px;
+    border-bottom: 1px solid rgba(225, 225, 226, 0.8);
+}
+
+/*el logo de nuestra pagina es un titulo llamado portafolio*/
+.logo{
+    font-family:  Helvetica ;
+    font-style: italic;
+    font-weight: 900;
+    flex-basis: 58%;
+    font-size: 35px;
+    flex-grow: 1;
+    
+
+    padding: 10px;
+    margin-left: 20px;
+    color: black;
+    text-shadow: 1px 1px 0px #ccc;
+    text-transform: uppercase;
+}
+
+.logo h1 {
+    font-family:  Helvetica ;
+    font-style: italic;
+    font-weight: 900;
+    font-size: 35px;
+}
+
+/*estilos al menu de navegacion*/
+#menu{
+    
+    flex-grow: 1;
+    flex-basis: 30%;
+    padding-right: 20px;
+}
+
+/*a la primera ul del menu le ponemos un display */
+#menu > ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+   /* justify-content: space-between/*nos da un espacio en cada elemento */;
+    height: 100%;
+    list-style: none;
+}
+/* estilos a los enlaces menu "a"*/
+
+#menu a{
+    text-transform: uppercase;
+    color: #000;
+    padding: 15px;
+
+    /*le damos una transicion */
+    transition: all 0.3s;
+}
+
+#menu a:hover{
+    background-color: #ccc;
+    color: white;
+}
+/** ****************************FIN DEL HEADER *********************/
+
+#contenido{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#projects {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    flex-basis: 80%;
+}
+
+.project{
+    flex-grow: 1;
+    flex-basis: 200px;
+    margin-bottom: 25px;
+    margin-right: 20px;
+    border: 1px solid #ccc;
+}
+.project img{
+    width: 100%;
+}
+
+.project-info {
+    padding: 10px;
+
+}
+
+.project-info a {
+    font-size: 16px;
+    color: black;
+    transition: all 0.3s;
+}
+.project-info a:hover{
+    color: green;
+}
+
+.project-info p{
+    font-size: 16px;
+    color: gray;
+}
+
+#aside{
+    flex-basis: 15%;
+    margin-right: 30px;
+    padding: 15px;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+#aside h2{
+    display: block;
+    width: 100%;
+    font-size: 25px;
+    font-family: sans-serif;
+    font-weight: 900;
+    color: black;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(225, 225, 226, 0.8);
+    text-align: center;
+
+}
+
+#aside  ul {
+    list-style: none;
+}
+
+#aside ul li {
+    padding-bottom: 20px;
+
+}
+
+#aside a{
+    display: block;
+    padding: 20px;
+    background: #eee;
+    color: #4444;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 0.3s;
+
+}
+
+#aside a:hover{
+    background: #4444;
+    color: white;
+}
+/**************************************************************/
+
+#footer{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    
+    height: 120px;
+    align-items: center;
+    border-top: 1px solid rgba(225, 225, 226, 0.8);
+}
+
+#footer .logo {
+    opacity: 0.5;
+    flex-basis: auto;
+    flex-grow: 1;
+    order: 2;
+    text-align: right;
+    margin-right: 20px;
+}
+
+#footer .info{
+    flex-grow: 1;
+    order: 1;
+    margin-left: 20px;
+    color: black;
+}
+
+/***************************************************/
+/*RESPONSIVE DESING*/
+
+@media (max-width:1334px) {
+    .cabecera{
+        text-align: center;
+    }
+    /*modificar el menu */
+    #menu >ul {
+        margin-top: 20px;
+        align-items: flex-start;
+        justify-content: space-evenly;
+    }
+}
+
+@media (max-width: 646px){
+    /*agregamos responsive al contenido principal de categorías*/
+    #contenido{
+
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+    }
+
+    #aside {
+        margin-right: 0px;
+    }
+    #aside ul{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+    }
+    
+    #aside ul li{
+        flex-grow: 1;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .project{
+       
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+
+    /*agregamos responsive al footer */
+    #footer .logo {
+        flex-grow: 1;
+        order: 1;
+        flex-basis: 100%;
+        text-align: center;
+        margin: 0px;
+    }
+
+    #footer .info{
+        flex-grow: 1;
+        order: 2;
+        margin-left: 20px;
+        color: black;
+        flex-basis: 100%;
+        text-align: center;
+        margin: 0px;
+    }
+}
